@@ -1,7 +1,6 @@
 const { expect } = require('chai');
-const { logBetween, logBetweenStepper,
-    printReverse
- } = require('../lib/whiteboarding-problems1');
+const { logBetween, logBetweenStepper, printReverse, fizzBuzz
+} = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
 
@@ -34,5 +33,8 @@ describe('printReverse', function () {
 
 describe('fizzBuzz', function () {
 
+    it('should takes a number and returns an array of every number from 0 to max that is divisible by either 3 or 5, but not both.', function () {
+        expect(fizzBuzz(20)).to.deep.equal([3, 5, 6, 9, 10, 12, 18]);
+    });
 
 });
