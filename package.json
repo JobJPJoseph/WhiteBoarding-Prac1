@@ -1,0 +1,28 @@
+{
+  "name": "whiteboarding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/whiteboarding-problems1",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JobJPJoseph/WhiteBoarding-Prac1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JobJPJoseph/WhiteBoarding-Prac1/issues"
+  },
+  "homepage": "https://github.com/JobJPJoseph/WhiteBoarding-Prac1#readme",
+  "dependencies": {
+    "chai": "^4.3.1",
+    "chai-spies": "^1.1.0",
+    "mocha": "^10.7.3"
+  }
+}
