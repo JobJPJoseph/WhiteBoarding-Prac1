@@ -4,7 +4,7 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
-    myIndexOf
+    myIndexOf, factorArray
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -91,6 +91,16 @@ describe('myIndexOf', function () {
 
         expect(result1).to.equal(3);
         expect(result2).to.equal(-1);
+    });
+
+});
+
+describe('factorArray', function () {
+
+    it('should return an array of all the factors', function () {
+        expect(factorArray([2,3,4,5,6], 20)).to.deep.equal([2,4,5]);
+        expect(factorArray([2,3,4,5,6], 35)).to.deep.equal([5]);
+        expect(factorArray([10,15,20,25], 5)).to.deep.equal([]);
     });
 
 });
