@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime
+const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -47,6 +47,16 @@ describe('isPrime', function () {
         expect(isPrime(11)).to.be.true;
         expect(isPrime(9)).to.be.false;
         expect(isPrime(2017)).to.be.true;
+    });
+
+});
+
+describe('maxValue', function () {
+
+    it('should return the largest value in array. Assume array is an array of numbers', function () {
+        expect(maxValue([12, 6, 43, 2])).to.equal(43);
+        expect(maxValue([])).to.be.null;
+        expect(maxValue([-4, -10, 0.43])).to.equal(0.43);
     });
 
 });
