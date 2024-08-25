@@ -4,7 +4,7 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
-    myIndexOf, factorArray, oddRange
+    myIndexOf, factorArray, oddRange, reverseHyphenString
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -112,4 +112,13 @@ describe('oddRange', function () {
         expect(oddRange(6)).to.deep.equal([1,3,5]);
     });
 
-})
+});
+
+describe('reverseHyphenString', function () {
+
+    it('should return a hyphenated string reversed', function () {
+        expect(reverseHyphenString(`Go-to-the-store`)).to.equal('store-the-to-Go');
+        expect(reverseHyphenString(`Jump,-jump-for-joy`)).to.equal('joy-for-jump-Jump,');
+    });
+
+});
