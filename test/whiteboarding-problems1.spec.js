@@ -4,7 +4,7 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
-    myIndexOf, factorArray
+    myIndexOf, factorArray, oddRange
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -104,3 +104,12 @@ describe('factorArray', function () {
     });
 
 });
+
+describe('oddRange', function () {
+
+    it('should return an array containing all positive odd numbers up to end', function () {
+        expect((oddRange(13))).to.deep.equal([1,3,5,7,9,11,13]);
+        expect(oddRange(6)).to.deep.equal([1,3,5]);
+    });
+
+})
