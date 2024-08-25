@@ -1,5 +1,10 @@
-const { expect } = require('chai');
-const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
+const chai = require('chai');
+const expect = chai.expect;
+const spies = require('chai-spies');
+chai.use(spies);
+
+const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
+    myIndexOf
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -57,6 +62,35 @@ describe('maxValue', function () {
         expect(maxValue([12, 6, 43, 2])).to.equal(43);
         expect(maxValue([])).to.be.null;
         expect(maxValue([-4, -10, 0.43])).to.equal(0.43);
+    });
+
+});
+
+describe('myIndexOf', function () {
+    let spyArrayIndexOf;
+    let spyArrayIncludes;
+
+    beforeEach(function () {
+        spyArrayIndexOf = chai.spy.on(Array.prototype, 'indexOf');
+        spyArrayIncludes = chai.spy.on(Array.prototype, 'includes');
+    });
+
+    afterEach(function () {
+        chai.spy.restore(Array.prototype, 'indexOf');
+        chai.spy.restore(Array.prototype, 'includes');
+    });
+
+    it('should return the index value of the target if it is present in the array or -1 if it is not present', function () {
+        let result1 = myIndexOf([1, 2, 3, 4], 4);
+        let result2 = myIndexOf([5, 6, 7, 8], 2);
+
+        expect(spyArrayIndexOf).to.not.have.been.called.with(4);
+        expect(spyArrayIncludes).to.not.have.been.called.with(4);
+        expect(spyArrayIndexOf).to.not.have.been.called.with(2);
+        expect(spyArrayIncludes).to.not.have.been.called.with(2);
+
+        expect(result1).to.equal(3);
+        expect(result2).to.equal(-1);
     });
 
 });
