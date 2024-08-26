@@ -4,8 +4,9 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
-    myIndexOf, factorArray, oddRange, reverseHyphenString
+    myIndexOf, factorArray, oddRange, reverseHyphenString, intersect
 } = require('../lib/whiteboarding-problems1');
+const { interfaces } = require('mocha');
 
 describe('logBetween' , function () {
 
@@ -119,6 +120,15 @@ describe('reverseHyphenString', function () {
     it('should return a hyphenated string reversed', function () {
         expect(reverseHyphenString(`Go-to-the-store`)).to.equal('store-the-to-Go');
         expect(reverseHyphenString(`Jump,-jump-for-joy`)).to.equal('joy-for-jump-Jump,');
+    });
+
+});
+
+describe('intersect', function () {
+
+    it('should return a new array containing the elements common to both arr1 and arr2', function () {
+        expect(intersect(['a','b','c','d'], ['b','d','e'])).to.deep.equal(['b','d']);
+        expect(intersect(['a','b','c'], ['x','y','z'])).to.deep.equal([]);
     });
 
 });
