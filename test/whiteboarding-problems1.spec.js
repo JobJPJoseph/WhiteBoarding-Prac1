@@ -5,7 +5,7 @@ chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
-    abbreviate
+    abbreviate, adult
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -150,6 +150,19 @@ describe('abbreviate', function () {
         expect(abbreviate('programming is fantastic')).to.equal('prgrmmng is fntstc');
         expect(abbreviate('hello world')).to.equal('hll wrld');
         expect(abbreviate('how are you')).to.equal('how are you');
+    });
+
+});
+
+describe('adults', function () {
+
+    it('should return an arrat containing the names of those who have an age of 18 or higher.', function () {
+        expect(adult([
+            {name: 'John', age: 20},
+            {name: 'Jim', age: 13},
+            {name: 'Jane', age: 18},
+            {name: 'Bob', age: 7}
+        ])).to.deep.equal(['John', 'Jane']);
     });
 
 });
