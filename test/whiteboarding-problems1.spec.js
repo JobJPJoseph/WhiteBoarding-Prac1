@@ -4,7 +4,8 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
-    myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray
+    myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
+    abbreviate
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -138,6 +139,17 @@ describe('mirrorArray', function () {
     it('should return a new array mirrored as shown in the examples', function () {
         expect(mirrorArray([1,2,3])).to.deep.equal([1,2,3,3,2,1]);
         expect(mirrorArray(['a', 'b', 'c', 'd'])).to.deep.equal([ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]);
+    });
+
+});
+
+describe('abbreviate', function () {
+
+    it('should return a new sentence where words longer than 4 characters have their vowels removed. Assume the sentence has all lowercase characters.', function () {
+        expect(abbreviate('the bootcamp is fun')).to.equal('the btcmp is fun');
+        expect(abbreviate('programming is fantastic')).to.equal('prgrmmng is fntstc');
+        expect(abbreviate('hello world')).to.equal('hll wrld');
+        expect(abbreviate('how are you')).to.equal('how are you');
     });
 
 });
