@@ -4,7 +4,7 @@ const spies = require('chai-spies');
 chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
-    myIndexOf, factorArray, oddRange, reverseHyphenString, intersect
+    myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -129,6 +129,15 @@ describe('intersect', function () {
     it('should return a new array containing the elements common to both arr1 and arr2', function () {
         expect(intersect(['a','b','c','d'], ['b','d','e'])).to.deep.equal(['b','d']);
         expect(intersect(['a','b','c'], ['x','y','z'])).to.deep.equal([]);
+    });
+
+});
+
+describe('mirrorArray', function () {
+
+    it('should return a new array mirrored as shown in the examples', function () {
+        expect(mirrorArray([1,2,3])).to.deep.equal([1,2,3,3,2,1]);
+        expect(mirrorArray(['a', 'b', 'c', 'd'])).to.deep.equal([ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]);
     });
 
 });
