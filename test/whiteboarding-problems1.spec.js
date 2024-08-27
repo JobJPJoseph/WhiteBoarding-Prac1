@@ -5,7 +5,7 @@ chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
-    abbreviate, adult
+    abbreviate, adults, countScores
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -157,12 +157,35 @@ describe('abbreviate', function () {
 describe('adults', function () {
 
     it('should return an arrat containing the names of those who have an age of 18 or higher.', function () {
-        expect(adult([
+        expect(adults([
             {name: 'John', age: 20},
             {name: 'Jim', age: 13},
             {name: 'Jane', age: 18},
             {name: 'Bob', age: 7}
         ])).to.deep.equal(['John', 'Jane']);
+    });
+
+});
+
+describe('countScores', function () {
+
+    it('should return an object that has key-value pairs where each name is a key and the value is their total score.', function () {
+        expect(countScores([
+            { name: "Anthony", score: 10 },
+            { name: "Fred", score : 10 },
+            { name: "Anthony", score: -8 },
+            { name: "Winnie", score: 12 }
+        ])).to.deep.equal({ Anthony: 2, Fred: 10, Winnie: 12 });
+
+        expect(countScores([
+            { name: "Anthony", score: 2 },
+            { name: "Winnie", score: 2 },
+            { name: "Fred", score: 2 },
+            { name: "Winnie", score: 2 },
+            { name: "Fred", score: 2 },
+            { name: "Anthony", score: 2 },
+            { name: "Winnie", score: 2 }
+        ])).to.deep.equal({ Anthony: 4, Fred: 4, Winnie: 6 });
     });
 
 });
