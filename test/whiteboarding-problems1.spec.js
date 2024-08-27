@@ -5,7 +5,7 @@ chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
-    abbreviate, adults, countScores
+    abbreviate, adults, countScores, firstNPrimes
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -186,6 +186,16 @@ describe('countScores', function () {
             { name: "Anthony", score: 2 },
             { name: "Winnie", score: 2 }
         ])).to.deep.equal({ Anthony: 4, Fred: 4, Winnie: 6 });
+    });
+
+});
+
+describe('firstNPrimes', function () {
+
+    it('should return an array of the first n prime numbers.', function () {
+        expect(firstNPrimes(0)).to.deep.equal([]);
+        expect(firstNPrimes(1)).to.deep.equal([2]);
+        expect(firstNPrimes(4)).to.deep.equal([2, 3, 5, 7]);
     });
 
 });
