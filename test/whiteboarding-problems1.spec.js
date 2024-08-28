@@ -5,7 +5,7 @@ chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
-    abbreviate, adults, countScores, firstNPrimes
+    abbreviate, adults, countScores, firstNPrimes, peakFinder
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -196,6 +196,16 @@ describe('firstNPrimes', function () {
         expect(firstNPrimes(0)).to.deep.equal([]);
         expect(firstNPrimes(1)).to.deep.equal([2]);
         expect(firstNPrimes(4)).to.deep.equal([2, 3, 5, 7]);
+    });
+
+});
+
+describe('peakFinder', function () {
+
+    it('should return an array containing the indices of all the peaks. A peak is an element that is greater than both of its neighbors. fi it is first or last element, it is a peak if it is greater than its one neighbor.', function () {
+        expect(peakFinder([1, 2, 3, 2, 1])).to.deep.equal([2]);
+        expect(peakFinder([2, 1, 2, 3, 4, 5])).to.deep.equal([0, 5]);
+        expect(peakFinder([4, 6, 9, 4, 2, -7, 2, -4, 5])).to.deep.equal([2, 6, 8]);
     });
 
 });
