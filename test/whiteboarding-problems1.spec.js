@@ -5,7 +5,7 @@ chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
-    abbreviate, adults, countScores, firstNPrimes, peakFinder
+    abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -206,6 +206,16 @@ describe('peakFinder', function () {
         expect(peakFinder([1, 2, 3, 2, 1])).to.deep.equal([2]);
         expect(peakFinder([2, 1, 2, 3, 4, 5])).to.deep.equal([0, 5]);
         expect(peakFinder([4, 6, 9, 4, 2, -7, 2, -4, 5])).to.deep.equal([2, 6, 8]);
+    });
+
+});
+
+describe('divisbleByThreePairSum', function () {
+
+    it('should return an array of all the pairs of indices, whose elements sum to a multiple of three', function () {
+        expect(divisibleByThreePairSum([1, 6, 3, 4, 2, 0])).to.deep.equal([[0, 4], [1, 2], [1, 5], [2, 5], [3, 4]]);
+        expect(divisibleByThreePairSum([8, 3, 5, 9, 2])).to.deep.equal([[1, 3]]);
+
     });
 
 });
