@@ -6,7 +6,7 @@ chai.use(spies);
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
-    zipArray, twoDimensionalTotal, countInnerElement
+    zipArray, twoDimensionalTotal, countInnerElement, twoDiff
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -261,6 +261,17 @@ describe('countInnerElement', function () {
             ['a','b'],
             ['a','c','d','a']
         ])).to.deep.equal({a: 4, b: 2, c: 2, d: 2});
+    });
+
+});
+
+describe('twoDiff', function () {
+
+    it('should return a 2-D array, where each of the sub array are indices of the two numbers such that their difference is 2. If there are no such numbers, return an empty array', function () {
+        expect(twoDiff([2, 3, 4, 6, 1, 7])).to.deep.equal([[0, 2], [1, 4], [2, 3]]);
+        expect(twoDiff([0, 2, 4, 3, 5])).to.deep.equal([[0, 1], [1, 2], [3,4]]);
+        expect(twoDiff([])).to.deep.equal([]);
+
     });
 
 });
