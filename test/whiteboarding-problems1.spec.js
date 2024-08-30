@@ -6,7 +6,7 @@ chai.use(spies);
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
-    zipArray
+    zipArray, twoDimensionalTotal
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -225,6 +225,24 @@ describe('zipArray', function () {
 
     it('should takes in two arrays and zips them together by return a single 2D-array', function () {
         expect(zipArray(['a', 'b', 'c', 'd'], [10, 20, 30, 40])).to.deep.equal([ [ 'a', 10 ], [ 'b', 20 ], [ 'c', 30 ], [ 'd', 40 ] ]);
+    });
+
+});
+
+describe('twoDimensionalTotal', function () {
+
+    it('should return the total sum of all elements', function () {
+        expect(twoDimensionalTotal([
+            [5, 2, 5, 3],
+            [12, 13]
+        ])).to.equal(40);
+
+        expect(twoDimensionalTotal([
+            [2],
+            [1, 9],
+            [1, 1, 1]
+        ])).to.equal(15);
+
     });
 
 });
