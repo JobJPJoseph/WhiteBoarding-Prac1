@@ -5,7 +5,8 @@ chai.use(spies);
 
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
-    abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum
+    abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
+    zipArray
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -216,6 +217,14 @@ describe('divisbleByThreePairSum', function () {
         expect(divisibleByThreePairSum([1, 6, 3, 4, 2, 0])).to.deep.equal([[0, 4], [1, 2], [1, 5], [2, 5], [3, 4]]);
         expect(divisibleByThreePairSum([8, 3, 5, 9, 2])).to.deep.equal([[1, 3]]);
 
+    });
+
+});
+
+describe('zipArray', function () {
+
+    it('should takes in two arrays and zips them together by return a single 2D-array', function () {
+        expect(zipArray(['a', 'b', 'c', 'd'], [10, 20, 30, 40])).to.deep.equal([ [ 'a', 10 ], [ 'b', 20 ], [ 'c', 30 ], [ 'd', 40 ] ]);
     });
 
 });
