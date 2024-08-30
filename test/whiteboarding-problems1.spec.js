@@ -6,7 +6,7 @@ chai.use(spies);
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
-    zipArray, twoDimensionalTotal
+    zipArray, twoDimensionalTotal, countInnerElement
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -243,6 +243,24 @@ describe('twoDimensionalTotal', function () {
             [1, 1, 1]
         ])).to.equal(15);
 
+    });
+
+});
+
+describe('countInnerElement', function () {
+
+    it('should return an object that counts how many times each element in each sub array repeats', function () {
+        expect(countInnerElement([
+            [1, 2, 4, 5],
+            [2, 7, 4],
+            [1, 4, 5, 2, 7]
+        ])).to.deep.equal({1: 2, 2: 3, 4: 3, 5: 2, 7: 2});
+
+        expect(countInnerElement([
+            ['a','b','c','d'],
+            ['a','b'],
+            ['a','c','d','a']
+        ])).to.deep.equal({a: 4, b: 2, c: 2, d: 2});
     });
 
 });
