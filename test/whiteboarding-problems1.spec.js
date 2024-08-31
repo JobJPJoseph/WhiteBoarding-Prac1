@@ -6,7 +6,7 @@ chai.use(spies);
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
-    zipArray, twoDimensionalTotal, countInnerElement, twoDiff
+    zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -271,6 +271,26 @@ describe('twoDiff', function () {
         expect(twoDiff([2, 3, 4, 6, 1, 7])).to.deep.equal([[0, 2], [1, 4], [2, 3]]);
         expect(twoDiff([0, 2, 4, 3, 5])).to.deep.equal([[0, 1], [1, 2], [3,4]]);
         expect(twoDiff([])).to.deep.equal([]);
+
+    });
+
+});
+
+describe('arrayDiff', function () {
+
+    it('should return a new array, containing the elements of arr1 that are not also in arr2', function () {
+        expect(arrayDiff([1, 23, 2, 43, 3, 4], [3, 23])).to.deep.equal([1, 2, 43 ,4]);
+        expect(arrayDiff(['a', 'ab', 'c', 'd', 'c'], ['d'])).to.deep.equal(['a', 'ab', 'c', 'c']);
+    });
+
+});
+
+describe('valueCounter', function () {
+
+    it('should return the number of times val repeats as a value in obj.', function () {
+        expect(valueCounter({ 1: 'Anne', 2: 'Alvin', 3: 'Anne', 4: 'Anne' }, 'Anne')).to.equal('Anne');
+        expect(valueCounter({ Anne: 50, Alvin: 1, JJ: 100, Roman: 100 }, 88)).to.equal(0);
+        expect(valueCounter({ Anne: 'Roman', Alvin: 'Roman', JJ: 'Anne', Roman: 'Anne' }, 'Roman')).to.equal(2);
 
     });
 
