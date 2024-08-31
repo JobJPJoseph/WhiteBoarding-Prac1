@@ -6,7 +6,8 @@ chai.use(spies);
 const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue,
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
-    zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter
+    zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
+    elementCount
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -292,6 +293,15 @@ describe('valueCounter', function () {
         expect(valueCounter({ Anne: 50, Alvin: 1, JJ: 100, Roman: 100 }, 88)).to.equal(0);
         expect(valueCounter({ Anne: 'Roman', Alvin: 'Roman', JJ: 'Anne', Roman: 'Anne' }, 'Roman')).to.equal(2);
 
+    });
+
+});
+
+describe('elementCount', function () {
+
+    it('should return a object. Each key corresponds to an element in the array and the value corresponds to how many times that element appeats in the array.', function () {
+        expect(elementCount(["a", "a", "b", "b"])).to.deep.equal({ "a" : 2, "b" : 2 });
+        expect(elementCount(['c', 'a', 'c', 'a', 'b'])).to.deep.equal({ "c": 2, "a": 2, "b": 1 });
     });
 
 });
