@@ -7,7 +7,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
-    elementCount
+    elementCount, nextTwoPrimes, pairProduct
 } = require('../lib/whiteboarding-problems1');
 const { interfaces } = require('mocha');
 
@@ -302,6 +302,30 @@ describe('elementCount', function () {
     it('should return a object. Each key corresponds to an element in the array and the value corresponds to how many times that element appeats in the array.', function () {
         expect(elementCount(["a", "a", "b", "b"])).to.deep.equal({ "a" : 2, "b" : 2 });
         expect(elementCount(['c', 'a', 'c', 'a', 'b'])).to.deep.equal({ "c": 2, "a": 2, "b": 1 });
+    });
+
+});
+
+describe('nextTwoPrimes', function () {
+
+    it('should returns the next two prime numbers greater than num', function () {
+        expect(nextTwoPrimes(2)).to.deep.equal([ 3, 5 ]);
+        expect(nextTwoPrimes(3)).to.deep.equal([ 5, 7 ]);
+        expect(nextTwoPrimes(7)).to.deep.equal([ 11, 13 ]);
+
+        expect(nextTwoPrimes(8)).to.deep.equal([ 11, 13 ]);
+        expect(nextTwoPrimes(20)).to.deep.equal([ 23, 29 ]);
+        expect(nextTwoPrimes(97)).to.deep.equal([ 101, 103 ]);
+    });
+
+});
+
+describe('pairProduct', function () {
+
+    it('should return pairs of indices whose elements multiple to num. No pair should appear twice in the result.', function () {
+        expect(pairProduct([1, 2, 3, 4, 5], 4)).to.deep.equal([ [ 0, 3 ] ]);
+        expect(pairProduct([1, 2, 3, 4, 5], 8)).to.deep.equal([ [ 1, 3 ] ]);
+        expect(pairProduct([1, 2, 3, 12, 8], 24)).to.deep.equal([ [ 1, 3 ], [ 2, 4 ] ]);
     });
 
 });
