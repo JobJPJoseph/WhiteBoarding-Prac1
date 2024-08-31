@@ -288,7 +288,7 @@ describe('arrayDiff', function () {
 describe('valueCounter', function () {
 
     it('should return the number of times val repeats as a value in obj.', function () {
-        expect(valueCounter({ 1: 'Anne', 2: 'Alvin', 3: 'Anne', 4: 'Anne' }, 'Anne')).to.equal('Anne');
+        expect(valueCounter({ 1: 'Anne', 2: 'Alvin', 3: 'Anne', 4: 'Anne' }, 'Anne')).to.equal(3);
         expect(valueCounter({ Anne: 50, Alvin: 1, JJ: 100, Roman: 100 }, 88)).to.equal(0);
         expect(valueCounter({ Anne: 'Roman', Alvin: 'Roman', JJ: 'Anne', Roman: 'Anne' }, 'Roman')).to.equal(2);
 
