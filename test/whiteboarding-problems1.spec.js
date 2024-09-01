@@ -8,7 +8,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
-    lcm, hipsterfyWord, hipsterfy
+    lcm, hipsterfyWord, hipsterfy, objectToString
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -402,6 +402,15 @@ describe('hipsterfy', function () {
         expect(hipsterfy('towel flicker banana')).to.equal('towl flickr banan');
         expect(hipsterfy('runner anaconda')).to.equal('runnr anacond');
         expect(hipsterfy('turtle cheeseburger fries')).to.equal('turtl cheeseburgr fris');
+    });
+
+});
+
+describe('objectToString', function () {
+
+    it('should return a string represent the counts of each character', function () {
+        expect(objectToString({ a : 2, b: 4, c: 1 })).to.equal('aabbbbc');
+        expect(objectToString({ b: 1, o: 2, t: 1 })).to.equal('boot');
     });
 
 });
