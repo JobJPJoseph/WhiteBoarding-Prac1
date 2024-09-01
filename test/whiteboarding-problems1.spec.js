@@ -7,9 +7,8 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
-    elementCount, nextTwoPrimes, pairProduct
+    elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize
 } = require('../lib/whiteboarding-problems1');
-const { interfaces } = require('mocha');
 
 describe('logBetween' , function () {
 
@@ -326,6 +325,23 @@ describe('pairProduct', function () {
         expect(pairProduct([1, 2, 3, 4, 5], 4)).to.deep.equal([ [ 0, 3 ] ]);
         expect(pairProduct([1, 2, 3, 4, 5], 8)).to.deep.equal([ [ 1, 3 ] ]);
         expect(pairProduct([1, 2, 3, 12, 8], 24)).to.deep.equal([ [ 1, 3 ], [ 2, 4 ] ]);
+    });
+
+});
+
+describe('twoDimensionalSize', function () {
+
+    it('should return the total number of elements in the 2D-array', function () {
+        expect(twoDimensionalSize([
+            [1, 2, 3],
+            [4, 5],
+            [6, 7, 8, 9]
+        ])).to.equal(9);
+
+        expect(twoDimensionalSize([
+            ['a'],
+            ['b', 'c', 'd', 'e']
+        ])).to.equal(5);
     });
 
 });
