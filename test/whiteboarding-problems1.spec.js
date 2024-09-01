@@ -7,7 +7,8 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
-    elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount
+    elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
+    lcm
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -356,6 +357,27 @@ describe('longWordCount', function () {
         expect(longWordCount("allwordword longwordword wordswordword")).to.equal(3);
         expect(longWordCount("severty schfifty five")).to.equal(1);
 
+    });
+
+});
+
+describe('factorial', function () {
+
+    it('should return the factorial of the number n. For example, the factorial of 4 is 4 * 3 * 2 * 1 = 24.', function () {
+        expect(factorial(1)).to.equal(1);
+        expect(factorial(4)).to.equal(24);
+        expect(factorial(5)).to.equal(120);
+        expect(factorial(10)).to.equal(3628800);
+    });
+
+});
+
+describe('lcm', function () {
+
+    it('should return the lowest number which is a multiple of both num1 and num2', function () {
+        expect(lcm(2, 3)).to.equal(6);
+        expect(lcm(6, 10)).to.equal(30);
+        expect(lcm(24, 26)).to.equal(312);
     });
 
 });
