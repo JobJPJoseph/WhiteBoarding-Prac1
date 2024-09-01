@@ -7,7 +7,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     myIndexOf, factorArray, oddRange, reverseHyphenString, intersect, mirrorArray,
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
-    elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize
+    elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -342,6 +342,20 @@ describe('twoDimensionalSize', function () {
             ['a'],
             ['b', 'c', 'd', 'e']
         ])).to.equal(5);
+    });
+
+});
+
+describe('longWordCount', function () {
+
+    it('longWordCount', function () {
+        expect(longWordCount("")).to.equal(0);
+        expect(longWordCount("short words only")).to.equal(0);
+        expect(longWordCount("one reallylong word")).to.equal(1);
+        expect(longWordCount("two reallylongwords inthisstring")).to.equal(2);
+        expect(longWordCount("allwordword longwordword wordswordword")).to.equal(3);
+        expect(longWordCount("severty schfifty five")).to.equal(1);
+
     });
 
 });
