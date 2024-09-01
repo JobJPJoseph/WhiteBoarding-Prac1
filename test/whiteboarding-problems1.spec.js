@@ -8,7 +8,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
-    lcm, hipsterfyWord, hipsterfy, objectToString
+    lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -411,6 +411,15 @@ describe('objectToString', function () {
     it('should return a string represent the counts of each character', function () {
         expect(objectToString({ a : 2, b: 4, c: 1 })).to.equal('aabbbbc');
         expect(objectToString({ b: 1, o: 2, t: 1 })).to.equal('boot');
+    });
+
+});
+
+describe('shortestWord', function () {
+
+    it('should return the shortest word of a sentence.', function () {
+        expect(shortestWord('app academy is cool')).to.equal('is');
+        expect(shortestWord('programming bootcamp')).to.equal('bootcamp');
     });
 
 });
