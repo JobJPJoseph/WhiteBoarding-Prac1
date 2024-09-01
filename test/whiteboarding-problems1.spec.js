@@ -8,7 +8,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
-    lcm
+    lcm, hipsterfyWord, hipsterfy
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -378,6 +378,30 @@ describe('lcm', function () {
         expect(lcm(2, 3)).to.equal(6);
         expect(lcm(6, 10)).to.equal(30);
         expect(lcm(24, 26)).to.equal(312);
+    });
+
+});
+
+describe('hipsterfyWord', function () {
+
+    it('should the string with the last vowel removed.', function () {
+        expect(hipsterfyWord('proper')).to.equal('propr');
+        expect(hipsterfyWord('tonic')).to.equal('tonc');
+        expect(hipsterfyWord('PANTHER')).to.equal('PANTHR');
+        expect(hipsterfyWord('BACKWARDS')).to.equal('BACKWRDS');
+
+    });
+
+});
+
+describe('hipsterfy', function () {
+
+    it('should remove the last vowel from each word', function () {
+        expect(hipsterfy('proper')).to.equal('propr');
+        expect(hipsterfy('proper tonic panther')).to.equal('propr tonc panthr');
+        expect(hipsterfy('towel flicker banana')).to.equal('towl flickr banan');
+        expect(hipsterfy('runner anaconda')).to.equal('runnr anacond');
+        expect(hipsterfy('turtle cheeseburger fries')).to.equal('turtl cheeseburgr fris');
     });
 
 });
