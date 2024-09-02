@@ -8,7 +8,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
-    lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord
+    lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -420,6 +420,38 @@ describe('shortestWord', function () {
     it('should return the shortest word of a sentence.', function () {
         expect(shortestWord('app academy is cool')).to.equal('is');
         expect(shortestWord('programming bootcamp')).to.equal('bootcamp');
+    });
+
+});
+
+describe('greatestCommonFactor', function () {
+
+    it('should return the largest number that is divides both num1 and num2', function () {
+        expect(greatestCommonFactor(15, 25)).to.equal(5);
+        expect(greatestCommonFactor(16, 24)).to.equal(8);
+        expect(greatestCommonFactor(7, 11)).to.equal(1);
+    });
+
+});
+
+describe('isPassing', function () {
+
+    it('should return treu if the average assessment score is at least 70.', function () {
+        expect(isPassing([
+            { number: 1, score: 60 },
+            { number: 2, score: 90 },
+            { number: 3, score: 80 },
+            { number: 4, score: 100 },
+            { number: 5, score: 85 }
+        ])).to.be.true;
+    });
+
+    it('should return false otherwise', function () {
+        expect(isPassing([
+            { number: 1, score: 60 },
+            { number: 2, score: 20 },
+            { number: 3, score: 45 }
+        ])).to.be.false;
     });
 
 });
