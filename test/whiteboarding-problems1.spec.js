@@ -8,7 +8,8 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     abbreviate, adults, countScores, firstNPrimes, peakFinder, divisibleByThreePairSum,
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
-    lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing
+    lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
+    valueConcat
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -452,6 +453,15 @@ describe('isPassing', function () {
             { number: 2, score: 20 },
             { number: 3, score: 45 }
         ])).to.be.false;
+    });
+
+});
+
+describe('valueConcat', function () {
+
+    it('should return a new array where each element is concatenated with its corresponding value from the object', function () {
+        expect(valueConcat(['alex', 'maurice', 'meagan', 'ali'], { alex: 'bronca', ali: 'harris' })).to.deep.equal([ 'alexbronca', 'maurice', 'meagan', 'aliharris' ]);
+        expect(valueConcat(['a', 'b', 'c'], { b: 2, c: 3 })).to.deep.equal([ 'a', 'b2', 'c3' ]);
     });
 
 });
