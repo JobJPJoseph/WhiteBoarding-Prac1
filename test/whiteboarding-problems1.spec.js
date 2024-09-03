@@ -9,7 +9,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb
+    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -525,6 +525,18 @@ describe('reverb', function () {
         expect(reverb('debugged')).to.equal('debuggeded');
         expect(reverb('my')).to.equal('my');
 
+    });
+
+});
+
+describe('countRepeats', function () {
+
+    it('should return the number of letters that appear more than once in the string.', function () {
+        expect(countRepeats('calvin')).to.equal(0);
+        expect(countRepeats('caaaalvin')).to.equal(1);
+        expect(countRepeats('pops')).to.equal(1);
+        expect(countRepeats('mississippi')).to.equal(3);
+        expect(countRepeats('hellobootcampprep')).to.equal(4);
     });
 
 });
