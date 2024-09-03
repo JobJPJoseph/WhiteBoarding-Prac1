@@ -9,7 +9,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat
+    valueConcat, threeInARow
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -462,6 +462,18 @@ describe('valueConcat', function () {
     it('should return a new array where each element is concatenated with its corresponding value from the object', function () {
         expect(valueConcat(['alex', 'maurice', 'meagan', 'ali'], { alex: 'bronca', ali: 'harris' })).to.deep.equal([ 'alexbronca', 'maurice', 'meagan', 'aliharris' ]);
         expect(valueConcat(['a', 'b', 'c'], { b: 2, c: 3 })).to.deep.equal([ 'a', 'b2', 'c3' ]);
+    });
+
+});
+
+describe('threeInARow', function () {
+
+    it('should return true if the array contains 3 of the same number consecutively', function () {
+        expect(threeInARow([4, 3, 7, 7, 7, 13, 8])).to.be.true;
+    });
+
+    it('The function should return false otherwise', function () {
+        expect(threeInARow([10, 9, 20, 33, 3, 3])).to.be.false;
     });
 
 });
