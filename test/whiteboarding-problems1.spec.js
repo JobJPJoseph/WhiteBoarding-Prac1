@@ -9,7 +9,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat, threeInARow
+    valueConcat, threeInARow, variableNameify
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -474,6 +474,16 @@ describe('threeInARow', function () {
 
     it('The function should return false otherwise', function () {
         expect(threeInARow([10, 9, 20, 33, 3, 3])).to.be.false;
+    });
+
+});
+
+describe('variableNameify', function () {
+
+    it('should return a string representing the variable name obtained by combineding the words and capitalizing them in mixCased style', function () {
+        expect(variableNameify(['is', 'prime'])).to.equal('isPrime');
+        expect(variableNameify(['remove', 'last', 'vowel'])).to.equal('removeLastVowel');
+        expect(variableNameify(['MaX', 'VALUE'])).to.equal('maxValue');
     });
 
 });
