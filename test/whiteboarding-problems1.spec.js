@@ -9,7 +9,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D
+    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -513,6 +513,18 @@ describe('reverse2D', function () {
             ['Julian', 'Matt', 'Mike'],
             ['Oscar', 'Patrick']
         ])).to.equal('PatrickOscarMikeMattJulian');
+    });
+
+});
+
+describe('reverb', function () {
+
+    it('should return the word with all characters after the last vowel repeated', function () {
+        expect(reverb('running')).to.equal('runninging');
+        expect(reverb('wild')).to.equal('wildild');
+        expect(reverb('debugged')).to.equal('debuggeded');
+        expect(reverb('my')).to.equal('my');
+
     });
 
 });
