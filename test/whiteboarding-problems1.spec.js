@@ -10,7 +10,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
-    pairsToString
+    pairsToString, countAdjacentSums
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -557,6 +557,16 @@ describe('pairsToString', function () {
             ['d', 1],
             ['!', 1]
         ])).to.equal('food!');
+    });
+
+});
+
+describe('countAdjacentSums', function () {
+
+    it('should count the number of times that two adjacent numbers in an array add up to n.', function () {
+        expect(countAdjacentSums([1, 5, 1], 6)).to.equal(2);
+        expect(countAdjacentSums([7, 2, 4, 6], 7)).to.equal(0);
+        expect(countAdjacentSums([6, 7, 11, 2, 5, 10, 3], 13)).to.equal(3);
     });
 
 });
