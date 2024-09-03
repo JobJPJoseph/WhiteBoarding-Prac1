@@ -9,7 +9,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat, threeInARow, variableNameify, threeIncreasing
+    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -496,6 +496,23 @@ describe('threeIncreasing', function () {
 
     it('The function should return false otherwise.', function () {
         expect(threeIncreasing([7, 2, 4, 5, 2, 1, 6])).to.be.false;
+    });
+
+});
+
+describe('reverse2D', function () {
+
+    it('should a string representing the elements of the array in reverse order.', function () {
+        expect(reverse2D([
+            ['a', 'b', 'c', 'd'],
+            ['e', 'f'],
+            ['g', 'h', 'i']
+        ])).to.equal('ihgfedcba');
+
+        expect(reverse2D([
+            ['Julian', 'Matt', 'Mike'],
+            ['Oscar', 'Patrick']
+        ])).to.equal('PatrickOscarMikeMattJulian');
     });
 
 });
