@@ -9,7 +9,8 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats
+    valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
+    pairsToString
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -537,6 +538,25 @@ describe('countRepeats', function () {
         expect(countRepeats('pops')).to.equal(1);
         expect(countRepeats('mississippi')).to.equal(3);
         expect(countRepeats('hellobootcampprep')).to.equal(4);
+    });
+
+});
+
+describe('pairsToString', function () {
+
+    it('should return a string corresponding to the pairs', function () {
+        expect(pairsToString([
+            ['a', 3],
+            ['b', 1],
+            ['c', 2]
+        ])).to.equal('aaabcc');
+
+        expect(pairsToString([
+            ['f', 1],
+            ['o', 2],
+            ['d', 1],
+            ['!', 1]
+        ])).to.equal('food!');
     });
 
 });
