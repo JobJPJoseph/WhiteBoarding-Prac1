@@ -9,7 +9,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     zipArray, twoDimensionalTotal, countInnerElement, twoDiff, arrayDiff, valueCounter,
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
-    valueConcat, threeInARow, variableNameify
+    valueConcat, threeInARow, variableNameify, threeIncreasing
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -484,6 +484,18 @@ describe('variableNameify', function () {
         expect(variableNameify(['is', 'prime'])).to.equal('isPrime');
         expect(variableNameify(['remove', 'last', 'vowel'])).to.equal('removeLastVowel');
         expect(variableNameify(['MaX', 'VALUE'])).to.equal('maxValue');
+    });
+
+});
+
+describe('threeIncreasing', function () {
+
+    it('should return true of the array contains 3 consecutive numbers in increasing order.', function () {
+        expect(threeIncreasing([3, 2, 11, 12, 13, 2, 4])).to.be.true;
+    });
+
+    it('The function should return false otherwise.', function () {
+        expect(threeIncreasing([7, 2, 4, 5, 2, 1, 6])).to.be.false;
     });
 
 });
