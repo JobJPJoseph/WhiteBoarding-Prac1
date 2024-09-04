@@ -10,7 +10,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
-    pairsToString, countAdjacentSums, signFlipCount, powerSequence
+    pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -590,6 +590,16 @@ describe('powerSequence', function () {
         expect(powerSequence(3, 4)).to.deep.equal([ 3, 9, 27, 81 ]);
         expect(powerSequence(2, 6)).to.deep.equal([ 2, 4, 8, 16, 32, 64 ]);
         expect(powerSequence(8, 3)).to.deep.equal([ 8, 64, 512 ]);
+    });
+
+});
+
+describe('collapseString', function () {
+
+    it('should return the string where streaks of consecutive characters are collapsed to a single character.', function () {
+        expect(collapseString('apple')).to.equal('aple');
+        expect(collapseString('AAAaalviiiiin!!!')).to.equal('Aalvin!');
+        expect(collapseString('hello   app academy')).to.equal('helo ap academy');
     });
 
 });
