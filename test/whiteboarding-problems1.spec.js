@@ -10,7 +10,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
-    pairsToString, countAdjacentSums, signFlipCount
+    pairsToString, countAdjacentSums, signFlipCount, powerSequence
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -580,6 +580,16 @@ describe('signFlipCount', function () {
         expect(signFlipCount([1, -2, -3, -4])).to.equal(1);
         expect(signFlipCount([-1, 11.3, -3, 100])).to.equal(3);
 
+    });
+
+});
+
+describe('powerSequence', function () {
+
+    it('should return an array containing a power sequence with the given', function () {
+        expect(powerSequence(3, 4)).to.deep.equal([ 3, 9, 27, 81 ]);
+        expect(powerSequence(2, 6)).to.deep.equal([ 2, 4, 8, 16, 32, 64 ]);
+        expect(powerSequence(8, 3)).to.deep.equal([ 8, 64, 512 ]);
     });
 
 });
