@@ -11,7 +11,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
-    mindPsAndQs
+    mindPsAndQs, commonFactors
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -622,6 +622,17 @@ describe('mindPsAndQs', function () {
         expect(mindPsAndQs('PQPQ')).to.equal(4);
         expect(mindPsAndQs('PPPXQPPPQ')).to.equal(5);
 
+    });
+
+});
+
+describe('commonFactors', function () {
+
+    it('should return an array that contains the common factors between both numbers. A factor is a number that divides another number with no remainder', function () {
+        expect(commonFactors(12, 50)).to.deep.equal([ 1, 2 ]);
+        expect(commonFactors(6, 24)).to.deep.equal([ 1, 2, 3, 6 ]);
+        expect(commonFactors(11, 22)).to.deep.equal([ 1, 11 ]);
+        expect(commonFactors(45, 60)).to.deep.equal([ 1, 3, 5, 15 ]);
     });
 
 });
