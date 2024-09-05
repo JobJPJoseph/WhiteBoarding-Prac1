@@ -10,7 +10,8 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     elementCount, nextTwoPrimes, pairProduct, twoDimensionalSize, longWordCount, factorial,
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
-    pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut
+    pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
+    mindPsAndQs
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -609,6 +610,18 @@ describe('oddWordsOut', function () {
     it('should returns the sentence where words with an odd number of characters are removed.', function () {
         expect(oddWordsOut('go to the store and buy milk')).to.equal('go to milk');
         expect(oddWordsOut('what is the answer')).to.equal('what is answer');
+    });
+
+});
+
+describe('mindPsAndQs', function () {
+
+    it('should return the length of the longest consecutive streak of the letters P and Q', function () {
+        expect(mindPsAndQs('BOOTCAMP')).to.equal(1);
+        expect(mindPsAndQs('APCDQQPPC')).to.equal(4);
+        expect(mindPsAndQs('PQPQ')).to.equal(4);
+        expect(mindPsAndQs('PPPXQPPPQ')).to.equal(5);
+
     });
 
 });
