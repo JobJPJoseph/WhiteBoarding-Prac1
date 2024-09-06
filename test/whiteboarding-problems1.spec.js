@@ -11,7 +11,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
-    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels
+    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels, vowelShift
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -671,6 +671,16 @@ describe('threeUniqueVowels', function () {
         expect(threeUniqueVowels('bootcamp')).to.be.false;
         expect(threeUniqueVowels('dog')).to.be.false;
         expect(threeUniqueVowels('go home')).to.be.false;
+    });
+
+});
+
+describe('vowelShift', function () {
+
+    it('should return a new sentence, where every vowel is replaced with the next vowel in the alphabet', function () {
+        expect(vowelShift('bootcamp')).to.equal('buutcemp');
+        expect(vowelShift('hello world')).to.equal('hillu wurld');
+        expect(vowelShift('on the hunt')).to.equal('un thi hant');
     });
 
 });
