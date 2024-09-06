@@ -11,7 +11,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
-    mindPsAndQs, commonFactors, commonPrimeFactors
+    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -644,6 +644,18 @@ describe('commonPrimeFactors', function () {
         expect(commonPrimeFactors(6, 24)).to.deep.equal([ 2, 3 ]);
         expect(commonPrimeFactors(11,22)).to.deep.equal([ 11 ]);
         expect(commonPrimeFactors(45, 60)).to.deep.equal([ 3, 5 ]);
+    });
+
+});
+
+describe('splitHalfArray', function () {
+
+    it('should return two halves of that array split in the middle.', function () {
+        expect(splitHalfArray(['a', 'b', 'c', 'd', 'e', 'f'])).to.deep.equal([ [ 'a', 'b', 'c' ], [ 'd', 'e', 'f' ] ]);
+    });
+
+    it('if the array has an odd number of elements, then the middle element should be excluded', function () {
+        expect(splitHalfArray([1, 2, 3, 4, 5])).to.deep.equal([ [ 1, 2 ], [ 4, 5 ] ]);
     });
 
 });
