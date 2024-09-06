@@ -11,7 +11,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
-    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray
+    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -656,6 +656,21 @@ describe('splitHalfArray', function () {
 
     it('if the array has an odd number of elements, then the middle element should be excluded', function () {
         expect(splitHalfArray([1, 2, 3, 4, 5])).to.deep.equal([ [ 1, 2 ], [ 4, 5 ] ]);
+    });
+
+});
+
+describe('threeUniqueVowels', function () {
+
+    it('should return true if the string contains at least three different vowels.', function () {
+        expect(threeUniqueVowels('delicious')).to.be.true;
+        expect(threeUniqueVowels('the bootcamp')).to.be.true;
+    });
+
+    it('should return false if the string does not contain at least three different vowels.', function () {
+        expect(threeUniqueVowels('bootcamp')).to.be.false;
+        expect(threeUniqueVowels('dog')).to.be.false;
+        expect(threeUniqueVowels('go home')).to.be.false;
     });
 
 });
