@@ -11,7 +11,8 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     lcm, hipsterfyWord, hipsterfy, objectToString, shortestWord, greatestCommonFactor, isPassing,
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
-    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels, vowelShift
+    mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels, vowelShift,
+    hasSymmetry
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -681,6 +682,20 @@ describe('vowelShift', function () {
         expect(vowelShift('bootcamp')).to.equal('buutcemp');
         expect(vowelShift('hello world')).to.equal('hillu wurld');
         expect(vowelShift('on the hunt')).to.equal('un thi hant');
+    });
+
+});
+
+describe('hasSymmetry', function () {
+
+    it('should return true if the array has symmetry', function () {
+        expect(hasSymmetry([1, 2, 3, 3, 2, 1])).to.be.true;
+        expect(hasSymmetry(['cat', 'dog', 'bird', 'dog', 'cat'])).to.be.true;
+    });
+
+    it('should return false if the array does not have symmetry', function () {
+        expect(hasSymmetry([1, 2, 3, 3, 4, 1])).to.be.false;
+        expect(hasSymmetry(['cat', 'dog', 'bird', 'bird', 'cat'])).to.be.false;
     });
 
 });
