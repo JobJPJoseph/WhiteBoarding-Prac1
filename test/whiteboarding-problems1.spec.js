@@ -12,7 +12,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
     mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels, vowelShift,
-    hasSymmetry, evenSumArray
+    hasSymmetry, evenSumArray, numsToWords
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -705,6 +705,16 @@ describe('evenSumsArray', function () {
     it('should return a new array where each num is replaced with the sum of all even numbers less than or equal to that num', function () {
         expect(evenSumArray([6, 7, 5])).to.deep.equal([ 12, 12, 6 ]);
         expect(evenSumArray([2, 8, 3, 5])).to.deep.equal([ 2, 20, 2, 6 ]);
+    });
+
+});
+
+describe('numsToWords', function () {
+
+    it('should return a new string where each digit character is replaced with its word representation.', function () {
+        expect(numsToWords('42')).to.equal('FourTwo');
+        expect(numsToWords('123')).to.equal('OneTwoThree');
+        expect(numsToWords('159598')).to.equal('OneFiveNineFiveNineEight');
     });
 
 });
