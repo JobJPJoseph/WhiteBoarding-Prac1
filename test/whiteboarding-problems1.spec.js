@@ -12,7 +12,7 @@ const { logBetween, logBetweenStepper, printReverse, fizzBuzz, isPrime, maxValue
     valueConcat, threeInARow, variableNameify, threeIncreasing, reverse2D, reverb, countRepeats,
     pairsToString, countAdjacentSums, signFlipCount, powerSequence, collapseString, oddWordsOut,
     mindPsAndQs, commonFactors, commonPrimeFactors, splitHalfArray, threeUniqueVowels, vowelShift,
-    hasSymmetry, evenSumArray, numsToWords
+    hasSymmetry, evenSumArray, numsToWords, moreDotLessDash
 } = require('../lib/whiteboarding-problems1');
 
 describe('logBetween' , function () {
@@ -715,6 +715,20 @@ describe('numsToWords', function () {
         expect(numsToWords('42')).to.equal('FourTwo');
         expect(numsToWords('123')).to.equal('OneTwoThree');
         expect(numsToWords('159598')).to.equal('OneFiveNineFiveNineEight');
+    });
+
+});
+
+describe('moreDotLessDash', function () {
+
+    it('should return true if the string contains more dots than dashes.', function () {
+        expect(moreDotLessDash('2-D arrays are fun. I think.')).to.be.true;
+        expect(moreDotLessDash('.-.-.')).to.be.true;
+    });
+
+    it('should return false if the string contains less dots than dashes', function () {
+        expect(moreDotLessDash('.-')).to.be.false;
+        expect(moreDotLessDash('..--')).to.be.false;
     });
 
 });
